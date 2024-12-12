@@ -1,0 +1,14 @@
+---
+- name: Install Gnome Terminal and xterm package
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install Gnome Terminal
+      ansible.builtin.yum:
+        name: gnome-terminal.x86_64
+        state: present
+    - name: Install xterm package
+      ansible.builtin.yum:
+        name: xterm.x86_64
+        state: present
